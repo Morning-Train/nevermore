@@ -8,8 +8,8 @@
     ]
   },
   "output": {
-    "js": "build",
-    "sass": "build"
+    "js": "dist",
+    "sass": "dist"
   },
   "notifications": false,
   "version": false,

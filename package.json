@@ -1,6 +1,6 @@
 {
   "name": "nevermorejs",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Modular weekly planner",
   "main": "nevermore.js",
   "scripts": {
@@ -29,8 +29,13 @@
     "object-assign": "^4.1.1"
   },
   "devDependencies": {
+    "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.2",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
     "eslint": "^4.18.2",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.1",
     "mixrc": "^0.1.2"
   },
   "repository": {

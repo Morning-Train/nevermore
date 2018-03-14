@@ -1,15 +1,15 @@
 // Default set of plugins
-const defaultPlugins = [].concat(require("./lib/options").defaultOptions.plugins);
+const defaultPlugins = [].concat(require("./build/options").defaultOptions.plugins);
 
-const BoundaryDetection = require("./lib/plugins/boundary-detection");
-const CollisionDetection = require("./lib/plugins/collision-detection");
-const DurationLimit = require("./lib/plugins/duration-limit");
-const TimeSnap = require("./lib/plugins/time-snap");
-const DragCreate = require("./lib/plugins/drag-create");
-const DragCopy = require("./lib/plugins/drag-copy");
-const DragMove = require("./lib/plugins/drag-move");
-const MonthControl = require("./lib/plugins/month-control");
-const WeekControl = require("./lib/plugins/week-control");
+const BoundaryDetection = require("./build/plugins/boundary-detection");
+const CollisionDetection = require("./build/plugins/collision-detection");
+const DurationLimit = require("./build/plugins/duration-limit");
+const TimeSnap = require("./build/plugins/time-snap");
+const DragCreate = require("./build/plugins/drag-create");
+const DragCopy = require("./build/plugins/drag-copy");
+const DragMove = require("./build/plugins/drag-move");
+const MonthControl = require("./build/plugins/month-control");
+const WeekControl = require("./build/plugins/week-control");
 
 module.exports = {
 	defaultPlugins,

@@ -4,3 +4,4 @@
 /.mixrc
 /mix-manifest.json
 /webpack.mix.js
+/gulpfile.js
