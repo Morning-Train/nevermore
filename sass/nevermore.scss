@@ -1,0 +1,316 @@
+/////////////////////////////////
+// Vars
+/////////////////////////////////
+
+$nvm-border: #999;
+$nvm-dark: #ccc;
+$nvm-darker: #aaa;
+$nvm-entry: #c0392b;
+$nvm-repeating-entry: #2980b9;
+
+/////////////////////////////////
+// Mixins
+/////////////////////////////////
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+                                   supported by Chrome and Opera */
+}
+
+/////////////////////////////////
+// Container
+/////////////////////////////////
+
+.nvm-container {
+  width: 960px;
+  height: 800px;
+  border: 1px solid $nvm-border;
+
+  // Normalize some stuff
+  button {
+    outline: none;
+    cursor: pointer;
+  }
+}
+
+/////////////////////////////////
+// Controls
+/////////////////////////////////
+
+.nvm-controls {
+  width: 100%;
+  height: 40px;
+  padding: 0 15px;
+  box-sizing: border-box;
+  @include clearfix;
+
+  > div {
+    float: left;
+  }
+}
+
+.nvm-month-control {
+  span {
+    display: inline-block;
+    width: 120px;
+    line-height: 40px;
+  }
+
+  .nvm-arrow {
+    height: 40px;
+    border: none;
+    background: none;
+    display: inline-block;
+
+    &:before {
+      display: block;
+      line-height: 40px;
+    }
+
+    &.nvm-arrow-left:before {
+      content: "\003c";
+    }
+
+    &.nvm-arrow-right:before {
+      content: "\003e";
+    }
+  }
+}
+
+.nvm-week-control {
+  .nvm-set-week {
+    display: inline-block;
+    background: none;
+    border: none;
+    line-height: 40px;
+    box-sizing: border-box;
+    padding: 0 15px;
+    text-transform: capitalize;
+
+    &.nvm-active {
+      font-weight: bold;
+    }
+
+    &.nvm-hidden {
+      display: none;
+    }
+  }
+}
+
+/////////////////////////////////
+// Header
+/////////////////////////////////
+
+.nvm-table-header {
+  @include clearfix;
+  width: 100%;
+  height: 60px;
+  background: $nvm-dark;
+  border-top: 1px solid $nvm-border;
+  border-bottom: 1px solid $nvm-border;
+  box-sizing: border-box;
+
+  .nvm-week-cell, .nvm-day-cell {
+    height: 100%;
+    float: left;
+    text-align: center;
+    padding: 10px 0;
+    box-sizing: border-box;
+    text-transform: capitalize;
+    border-right: 1px solid $nvm-border;
+
+    &:last-child {
+      border-right: none;
+    }
+  }
+
+  .nvm-week-cell {
+    width: 80px;
+    background-color: $nvm-darker;
+    position: relative;
+
+    span {
+      position: relative;
+      transform: translateY(-50%);
+      top: 50%;
+      display: block;
+    }
+  }
+
+  .nvm-day-cell {
+    width: calc((100% - 80px) / 7);
+
+    .nvm-day, .nvm-date {
+      display: block;
+    }
+
+    .nvm-date {
+      margin-top: 5px;
+      font-size: 0.75em;
+    }
+  }
+}
+
+/////////////////////////////////
+// Body
+/////////////////////////////////
+
+.nvm-body {
+  width: 100%;
+  height: calc(100% - 100px);
+  box-sizing: border-box;
+  position: relative;
+  @include clearfix;
+}
+
+.nvm-scale {
+  width: 80px;
+  height: 100%;
+  float: left;
+  border-right: 1px solid $nvm-border;
+  box-sizing: border-box;
+  position: relative;
+
+  .nvm-tick {
+    position: absolute;
+    display: block;
+    top: 0;
+    transform: translateY(-50%);
+    width: 100%;
+
+    &:first-child, &:last-child {
+      display: none;
+    }
+
+    text-align: center;
+  }
+}
+
+.nvm-grid {
+  width: calc(100% - 80px);
+  height: 100%;
+  position: relative;
+  float: left;
+  box-sizing: border-box;
+  @include clearfix;
+
+  .nvm-grid-day {
+    float: left;
+    width: calc(100% / 7);
+    height: 100%;
+    border-right: 1px solid $nvm-border;
+    box-sizing: border-box;
+
+    &:last-child {
+      border-right: none;
+    }
+
+    .nvm-grid-hour {
+      display: block;
+      border-bottom: 1px solid $nvm-border;
+      box-sizing: border-box;
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+}
+
+.nvm-table-body {
+  position: absolute;
+  left: 80px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: calc(100% - 80px);
+  height: 100%;
+
+  .nvm-item {
+    position: absolute;
+    width: calc(100% / 7);
+    box-sizing: border-box;
+    padding: 5px;
+    background-color: $nvm-entry;
+    overflow: hidden;
+    color: #fff;
+    @include noselect;
+
+    &.nvm-repeater-item {
+      background-color: $nvm-repeating-entry;
+    }
+
+    .nvm-item-controls {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+
+      .nvm-grabber {
+        background-color: $nvm-dark;
+        position: absolute;
+
+        &.nvm-grabber-top, &.nvm-grabber-bottom {
+          left: 0;
+          right: 0;
+          width: 100%;
+          height: 8px;
+          cursor: row-resize;
+        }
+
+        &.nvm-grabber-left, &.nvm-grabber-right {
+          top: 0;
+          bottom: 0;
+          height: 100%;
+          width: 8px;
+          cursor: col-resize;
+        }
+
+        &.nvm-grabber-top {
+          top: 0;
+        }
+
+        &.nvm-grabber-bottom {
+          bottom: 0;
+        }
+
+        &.nvm-grabber-right {
+          right: 0;
+        }
+
+        &.nvm-grabber-left {
+          left: 0;
+        }
+      }
+    }
+
+    .nvm-item-body {
+      cursor: grab;
+      position: relative;
+      padding: 10px;
+      box-sizing: border-box;
+      width: 100%;
+      height: 100%;
+    }
+
+    .nvm-item-footer {
+      position: absolute;
+      bottom: 15px;
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "name": "nevermorejs",
+  "version": "0.0.1",
+  "description": "Modular weekly planner",
+  "main": "build/index.js",
+  "scripts": {
+    "dev": "npm run development",
+    "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch-poll": "npm run watch -- --watch-poll",
+    "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "prod": "npm run production",
+    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+  },
+  "keywords": [
+    "modular",
+    "weekly",
+    "week",
+    "planner"
+  ],
+  "author": "Robert Ontiu",
+  "license": "MIT",
+  "dependencies": {
+    "cleopatra": "^0.2.2",
+    "detect-browser": "^2.1.0",
+    "es6-weak-map": "^2.0.2",
+    "event-emitter": "^0.3.5",
+    "moment": "^2.21.0",
+    "object-assign": "^4.1.1"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.2",
+    "eslint": "^4.18.2",
+    "mixrc": "^0.1.2"
+  }
+}

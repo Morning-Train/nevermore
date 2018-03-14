@@ -1,0 +1,14 @@
+{
+  "env": {
+    "node": true,
+    "es6": true
+  },
+  "ecmaFeatures": {
+    "templateStrings": true,
+    "arrowFunctions": true,
+    "blockBindings": true
+  },
+  "extends": "eslint:recommended",
+  "rules": {
+  }
+}

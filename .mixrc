@@ -1,0 +1,18 @@
+{
+  "entries": {
+    "js": [
+      "nevermore.bundle.js"
+    ],
+    "sass": [
+      "sass/nevermore.scss"
+    ]
+  },
+  "output": {
+    "js": "build",
+    "sass": "build"
+  },
+  "notifications": false,
+  "version": false,
+  "sourceMaps": true,
+  "processCssUrls": false
+}

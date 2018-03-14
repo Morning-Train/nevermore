@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+    <title>nevermore example</title>
+    <link rel="stylesheet" href="./../build/nevermore.css"/>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #ccc;
+        }
+
+        #nevermore-example {
+            text-align: left;
+            margin: 15px auto;
+            background-color: #fff;
+        }
+    </style>
+</head>
+<div id="nevermore-example"></div>
+<script src="./../build/nevermore.bundle.js"></script>
+<script>
+	window.example = nevermore(document.querySelector("#nevermore-example"), {
+		minTime: 7,
+		maxTime: 23,
+		minDate: "2018-03-12",
+		collisionFilter: true,
+		minDuration: 60,
+		maxDuration: 240,
+		items: [
+			{from: "2018-03-12 08:00", to: "2018-03-12 10:00"},
+			{from: "2018-03-17 15:00", to: "2018-03-17 18:30", repeater: {except: ["2018-03-10"]}},
+			{from: "2018-03-18 20:30", to: "2018-03-18 22:00"}
+		]
+	});
+</script>
+</html>
