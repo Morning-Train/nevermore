@@ -22,15 +22,15 @@
 <script src="./../dist/nevermore.bundle.js"></script>
 <script>
 	window.example = nevermore(document.querySelector("#nevermore-example"), {
-		minTime: 7,
-		maxTime: 23,
-		minDate: "2018-03-12",
+		minTime: 0,
+		maxTime: 24,
+		minDate: "2018-03-14 00:00:00",
 		collisionFilter: true,
 		minDuration: 60,
-		maxDuration: 240,
+		maxDuration: 480,
 		items: [
-			{from: "2018-03-12 08:00", to: "2018-03-12 10:00"},
-			{from: "2018-03-17 15:00", to: "2018-03-17 18:30", repeater: {except: ["2018-03-10"]}},
+			{from: "2018-03-16 08:00", to: "2018-03-16 10:00"},
+			{from: "2018-03-17 15:00", to: "2018-03-17 18:30", repeater: {except: ["2018-03-24"]}},
 			{from: "2018-03-18 20:30", to: "2018-03-18 22:00"}
 		]
 	});

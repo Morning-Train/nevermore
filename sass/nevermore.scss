@@ -39,6 +39,7 @@ $nvm-repeating-entry: #2980b9;
   width: 960px;
   height: 800px;
   border: 1px solid $nvm-border;
+  @include noselect;
 
   // Normalize some stuff
   button {
@@ -260,6 +261,7 @@ $nvm-repeating-entry: #2980b9;
       right: 0;
       bottom: 0;
       left: 0;
+      //z-index: 10;
 
       .nvm-grabber {
         background-color: $nvm-dark;
