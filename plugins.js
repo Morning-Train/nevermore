@@ -12,14 +12,14 @@ const MonthControl = require("./build/plugins/month-control");
 const WeekControl = require("./build/plugins/week-control");
 
 module.exports = {
-	defaultPlugins,
-	BoundaryDetection,
-	CollisionDetection,
-	DurationLimit,
-	TimeSnap,
-	DragCreate,
-	DragCopy,
-	DragMove,
-	MonthControl,
-	WeekControl
+	defaultPlugins: defaultPlugins,
+	BoundaryDetection: BoundaryDetection,
+	CollisionDetection: CollisionDetection,
+	DurationLimit: DurationLimit,
+	TimeSnap: TimeSnap,
+	DragCreate: DragCreate,
+	DragCopy: DragCopy,
+	DragMove: DragMove,
+	MonthControl: MonthControl,
+	WeekControl: WeekControl
 };

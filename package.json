@@ -1,6 +1,6 @@
 {
   "name": "nevermorejs",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "description": "Modular weekly planner",
   "main": "nevermore.js",
   "scripts": {
